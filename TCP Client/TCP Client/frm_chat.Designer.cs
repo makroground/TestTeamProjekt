@@ -37,10 +37,12 @@
             this.lbl_ipaddress = new System.Windows.Forms.Label();
             this.lbl_message = new System.Windows.Forms.Label();
             this.lbl_answers = new System.Windows.Forms.Label();
+            this.tmr_sendSpam = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btn_send
             // 
+            this.btn_send.Enabled = false;
             this.btn_send.Location = new System.Drawing.Point(363, 140);
             this.btn_send.Name = "btn_send";
             this.btn_send.Size = new System.Drawing.Size(68, 24);
@@ -51,6 +53,7 @@
             // 
             // tmr_UpdateListener
             // 
+            this.tmr_UpdateListener.Enabled = true;
             this.tmr_UpdateListener.Interval = 1;
             this.tmr_UpdateListener.Tick += new System.EventHandler(this.tmr_UpdateListener_Tick);
             // 
@@ -103,6 +106,12 @@
             this.lbl_answers.TabIndex = 6;
             this.lbl_answers.Text = "Answers:";
             // 
+            // tmr_sendSpam
+            // 
+            this.tmr_sendSpam.Enabled = true;
+            this.tmr_sendSpam.Interval = 1000;
+            this.tmr_sendSpam.Tick += new System.EventHandler(this.tmr_sendSpam_Tick);
+            // 
             // frm_chat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -133,6 +142,7 @@
         internal System.Windows.Forms.Label lbl_ipaddress;
         internal System.Windows.Forms.Label lbl_message;
         internal System.Windows.Forms.Label lbl_answers;
+        private System.Windows.Forms.Timer tmr_sendSpam;
     }
 }
 

@@ -19,6 +19,8 @@ namespace TCP_Client
         TcpListener Listener = new TcpListener(IPAddress.Any, 65535);
         TcpClient Client = new TcpClient();
         String Message = "";
+        int countRuns = 0;
+        String partnerIP = "192.168.188.20";
 
         public frm_chat()
         {
@@ -29,12 +31,13 @@ namespace TCP_Client
         {
             Thread ListenerThread = new Thread(new ThreadStart(Listening));
             ListenerThread.Start();
+
+            tmr_UpdateListener.Start();
         }
 
         private void Listening()
         {
             Listener.Start();
-            tmr_UpdateListener.Start();
         }
 
         private void tmr_UpdateListener_Tick(object sender, EventArgs e)
@@ -76,6 +79,27 @@ namespace TCP_Client
                     String ErrorResult = ex.Message;
                     MessageBox.Show(ErrorResult + "\n" + "Please review Client Address", "Error Sending Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void tmr_sendSpam_Tick(object sender, EventArgs e)
+        {
+            countRuns++;
+            try
+            {
+                Client = new TcpClient(partnerIP, 65535);
+                StreamWriter Writer = new StreamWriter(Client.GetStream());
+                Writer.Write("Timer runs: " + countRuns);
+                Writer.Flush();
+                lbox_messages.Items.Add("Timer runs: " + countRuns);
+
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                String ErrorResult = ex.Message;
+                MessageBox.Show(ErrorResult + "\n" + "Please review Client Address", "Error Sending Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

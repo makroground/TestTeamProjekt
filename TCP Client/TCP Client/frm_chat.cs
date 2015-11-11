@@ -16,7 +16,7 @@ namespace TCP_Client
 {
     public partial class frm_chat : Form
     {
-        TcpListener Listener = new TcpListener(IPAddress.Any, 65535);
+        TcpListener Listener = new TcpListener(65535);
         TcpClient Client = new TcpClient();
         String Message = "";
 
@@ -25,10 +25,12 @@ namespace TCP_Client
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e) 
         {
             Thread ListenerThread = new Thread(new ThreadStart(Listening));
             ListenerThread.Start();
+            
+            
         }
 
         private void Listening()
@@ -37,7 +39,7 @@ namespace TCP_Client
             tmr_UpdateListener.Start();
         }
 
-        private void tmr_UpdateListener_Tick(object sender, EventArgs e)
+        public void tmr_UpdateListener_Tick(object sender, EventArgs e) 
         {
             if (Listener.Pending())
             {

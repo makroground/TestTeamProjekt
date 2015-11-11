@@ -51,6 +51,7 @@
             // 
             // tmr_UpdateListener
             // 
+            this.tmr_UpdateListener.Interval = 1;
             this.tmr_UpdateListener.Tick += new System.EventHandler(this.tmr_UpdateListener_Tick);
             // 
             // tbox_ipaddress

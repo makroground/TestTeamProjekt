@@ -62,33 +62,21 @@ namespace TCP_Client
             {
                 try
                 {
+                    Client = new TcpClient(tbox_ipaddress.Text, 65535);
+                    StreamWriter Writer = new StreamWriter(Client.GetStream());
+                    Writer.Write(tbox_ipaddress.Text + " send:  " + tbox_message.Text);
+                    Writer.Flush();
+                    lbox_messages.Items.Add("YOU* send:  " + tbox_message.Text);
+           
+                }
 
-                } catch (Exception ex)
+                catch (Exception ex)
                 {
-
+                    Console.WriteLine(ex);
+                    String ErrorResult = ex.Message;
+                    MessageBox.Show(ErrorResult + "\n" + "Please review Client Address", "Error Sending Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
-
-    //    Private Sub btn_send_Click(sender As Object, e As EventArgs)
-    //    If txt_message.Text = "" Or txt_ipaddress.Text = "" Then
-    //        MessageBox.Show("Fill in valid Data to send the Message", "Error Sending Message", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    //    Else
-    //        Try
-    //            Client = New TcpClient(txt_ipaddress.Text, 65535)
-
-    //            Dim Writer As New StreamWriter(Client.GetStream())
-
-    //            Writer.Write(txt_ipaddress.Text & " send:  " & txt_message.Text)
-    //            Writer.Flush()
-
-    //            lbox_messages.Items.Add(" YOU* send:  " & txt_message.Text)
-    //        Catch ex As Exception
-    //            Console.WriteLine(ex)
-    //            Dim ErrorResult As String = ex.Message
-    //            MessageBox.Show(ErrorResult & vbCrLf & vbCrLf & "Please review Client Address", "Error Sending Message", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    //        End Try
-    //    End If
-    //End Sub
     }
 }

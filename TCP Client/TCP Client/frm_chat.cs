@@ -83,5 +83,5 @@ namespace TCP_Client
 }
        
 // Letzte Changes:
-// Spam wieder entfernt, Timer deaktiviert, Programm hängt bei starten trotz deaktivierung des Timers
-// Ratlosigkeit herrscht im Zimmer 202. Können Sie helfen Bürgermeister Ricardo Breßler? Ihre Stadt benötigt Sie!
+// Timer deaktiviert - Spam entfernt
+// 

@@ -43,9 +43,10 @@
             // btn_send
             // 
             this.btn_send.Enabled = false;
-            this.btn_send.Location = new System.Drawing.Point(363, 140);
+            this.btn_send.Location = new System.Drawing.Point(544, 215);
+            this.btn_send.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_send.Name = "btn_send";
-            this.btn_send.Size = new System.Drawing.Size(68, 24);
+            this.btn_send.Size = new System.Drawing.Size(102, 37);
             this.btn_send.TabIndex = 0;
             this.btn_send.Text = "Send";
             this.btn_send.UseVisualStyleBackColor = true;
@@ -59,50 +60,57 @@
             // 
             // tbox_ipaddress
             // 
-            this.tbox_ipaddress.Location = new System.Drawing.Point(52, 57);
+            this.tbox_ipaddress.Location = new System.Drawing.Point(78, 88);
+            this.tbox_ipaddress.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbox_ipaddress.Name = "tbox_ipaddress";
-            this.tbox_ipaddress.Size = new System.Drawing.Size(133, 20);
+            this.tbox_ipaddress.Size = new System.Drawing.Size(198, 26);
             this.tbox_ipaddress.TabIndex = 1;
             // 
             // tbox_message
             // 
-            this.tbox_message.Location = new System.Drawing.Point(52, 140);
+            this.tbox_message.Location = new System.Drawing.Point(78, 215);
+            this.tbox_message.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbox_message.Name = "tbox_message";
-            this.tbox_message.Size = new System.Drawing.Size(280, 20);
+            this.tbox_message.Size = new System.Drawing.Size(418, 26);
             this.tbox_message.TabIndex = 2;
             // 
             // lbox_messages
             // 
             this.lbox_messages.FormattingEnabled = true;
-            this.lbox_messages.Location = new System.Drawing.Point(52, 230);
+            this.lbox_messages.ItemHeight = 20;
+            this.lbox_messages.Location = new System.Drawing.Point(78, 354);
+            this.lbox_messages.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbox_messages.Name = "lbox_messages";
-            this.lbox_messages.Size = new System.Drawing.Size(379, 277);
+            this.lbox_messages.Size = new System.Drawing.Size(566, 424);
             this.lbox_messages.TabIndex = 3;
             // 
             // lbl_ipaddress
             // 
             this.lbl_ipaddress.AutoSize = true;
-            this.lbl_ipaddress.Location = new System.Drawing.Point(49, 41);
+            this.lbl_ipaddress.Location = new System.Drawing.Point(74, 63);
+            this.lbl_ipaddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_ipaddress.Name = "lbl_ipaddress";
-            this.lbl_ipaddress.Size = new System.Drawing.Size(61, 13);
+            this.lbl_ipaddress.Size = new System.Drawing.Size(91, 20);
             this.lbl_ipaddress.TabIndex = 4;
             this.lbl_ipaddress.Text = "IP Address:";
             // 
             // lbl_message
             // 
             this.lbl_message.AutoSize = true;
-            this.lbl_message.Location = new System.Drawing.Point(49, 124);
+            this.lbl_message.Location = new System.Drawing.Point(74, 191);
+            this.lbl_message.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_message.Name = "lbl_message";
-            this.lbl_message.Size = new System.Drawing.Size(53, 13);
+            this.lbl_message.Size = new System.Drawing.Size(78, 20);
             this.lbl_message.TabIndex = 5;
             this.lbl_message.Text = "Message:";
             // 
             // lbl_answers
             // 
             this.lbl_answers.AutoSize = true;
-            this.lbl_answers.Location = new System.Drawing.Point(49, 214);
+            this.lbl_answers.Location = new System.Drawing.Point(74, 329);
+            this.lbl_answers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_answers.Name = "lbl_answers";
-            this.lbl_answers.Size = new System.Drawing.Size(50, 13);
+            this.lbl_answers.Size = new System.Drawing.Size(74, 20);
             this.lbl_answers.TabIndex = 6;
             this.lbl_answers.Text = "Answers:";
             // 
@@ -114,9 +122,9 @@
             // 
             // frm_chat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 541);
+            this.ClientSize = new System.Drawing.Size(686, 832);
             this.Controls.Add(this.lbl_answers);
             this.Controls.Add(this.lbl_message);
             this.Controls.Add(this.lbl_ipaddress);
@@ -124,6 +132,7 @@
             this.Controls.Add(this.tbox_message);
             this.Controls.Add(this.tbox_ipaddress);
             this.Controls.Add(this.btn_send);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frm_chat";
             this.Text = "TCP Chat";
             this.Load += new System.EventHandler(this.Form1_Load);
